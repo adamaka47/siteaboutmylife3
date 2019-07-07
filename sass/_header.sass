@@ -1,0 +1,148 @@
+.header
+	&_logo
+		img
+			width: 100px
+	&_top
+		// position: fixed
+		// top: 0
+		// width: 100%
+		padding: 10px 0
+		background: rgba(0,0,0,0.85)
+	&_flex
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&_menu
+		&_button
+			background-color: transparent
+			border: none
+			position: absolute
+			right: 40px
+			top: 35px
+			cursor: pointer
+			display: none
+			width: 16px
+			height: 20px
+			span
+				width: 16px
+				height: 2px
+				background-color: #af8
+				border-radius: 2px
+				display: block
+				position: absolute
+				transition: all 0.4s
+				left: 0
+				top: 50%
+				transform: translateY(-50%)
+				&::after
+					content: ''
+					position: absolute
+					top: 5px
+					border-radius: 2px
+					display: block
+					width: 16px
+					height: 2px
+					background-color: #af8
+					transition: all 0.4s
+					left: 0
+				&::before
+					content: ''
+					position: absolute
+					top: -5px
+					border-radius: 2px
+					display: block
+					width: 16px
+					height: 2px
+					background-color: #af8
+					transition: all 0.4s
+					left: 0
+			&_active
+				transition: all 0.4s
+				span
+					background-color: transparent
+					transition: all 0.4s
+					&::before
+						transform: rotate(-45deg)
+						transition: all 0.4s
+						top: 0
+					&::after
+						transform: rotate(45deg)
+						transition: all 0.4s
+						top: 0
+
+		&_mobile
+			display: none
+
+	&_ul
+		&_mobile
+			&_active
+				left: 0
+			list-style-type: none
+			background-color: rgba(#fea100, 0.7)
+			height: 100vh
+			width: 70%
+			padding: 0
+			margin: 0
+			position: absolute
+			left: -100%
+			top: 0
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-direction: column
+			transition: all 0.5s
+			li
+				margin: 20px 0
+				a
+					font-size: 16px
+					text-transform: uppercase
+					color: #222
+
+		display: flex
+		margin: 0
+		padding: 0
+		list-style-type: none
+		flex-wrap: wrap
+		justify-content: center
+		li
+			margin-right: 40px
+			&:last-child
+				margin-right: 0
+			a
+				text-transform: uppercase
+				position: relative
+				color: #af8
+				&::after
+					position: absolute
+					content: ''
+					height: 1px
+					width: 100%
+					background-color: #af8
+					left: 0
+					bottom: -4px
+					transform: scale(0)
+					transition: all 0.4s
+					transform-origin: right
+				&:hover::after
+					transform: scale(1)
+
+
+@media (max-width: 650px)
+	.header
+		&_ul
+			li
+				margin-right: 15px
+				a
+					font-size: 14px
+
+@media (max-width: 480px)
+	.header
+		&_ul
+			display: none
+		&_menu
+			&_mobile
+				display: block
+			&_button
+				display: block
+
+

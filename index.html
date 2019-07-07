@@ -7,6 +7,8 @@
 	<meta name="keywords" content="Моя жизнь.">
 	<meta name="description" content="Всем привет. Это моя страничка. Я знаю, что вряд ли на нее кто-нибудь зайдет. Здесь я буду делиться своими мыслями и целями. Все делаю вручную, github не позволяет поставить CMS. Спасибо.">
 	<meta name="author" content="Adam">
+	<link rel="icon" href="favicon.png" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
 	<link href="https://fonts.googleapis.com/css?family=Russo+One|Source+Sans+Pro:200,400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -15,8 +17,49 @@
 <body>
 	
 	<header class="header" id="header">
-		dd
+		<div class="header_top">
+			<div class="container">
+				<div class="header_flex">
+					<div class="header_logo">
+						<a href="index.html">
+							<img src="img/logo.svg" alt="Logo">
+						</a>
+					</div>
+					<nav class="header_menu">
+						<ul class="header_ul">
+							<li><a href="#">Главная</a></li>
+							<li><a href="#">Мои цели</a></li>
+							<li><a href="#">Моя жизнь</a></li>
+							<li><a href="#">Мои мысли</a></li>
+						</ul>
+						<button class="header_menu_button">
+							<span></span>
+						</button>
+						<nav class="header_menu_mobile">
+							<ul class="header_ul_mobile">
+								<li><a href="#">Главная</a></li>
+								<li><a href="#">Мои цели</a></li>
+								<li><a href="#">Моя жизнь</a></li>
+								<li><a href="#">Мои мысли</a></li>
+							</ul>
+						</nav>
+					</nav>
+				</div>
+			</div>
+		</div>
 	</header>
 
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+
+			document.querySelector('.header_menu_button').addEventListener('click', function() {
+				this.classList.toggle('header_menu_button_active');
+				document.querySelector('.header_ul_mobile').classList.toggle('header_ul_mobile_active')
+			});
+
+		});
+	</script>
 </body>
 </html>
